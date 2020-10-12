@@ -113,13 +113,21 @@ margin: auto;
     color:	#f9fd04;
     
 }
+.inline1 div a:hover{
+    color: #f9fd04;
+}
 .menu li {
     width:7em;
     line-height:2.5em;
     float:left;
     
 }
-#inline{
+.inline1{
+    /* display: inline; */
+    white-space: nowrap;
+    text-align: center;    
+}
+.inline{
 /* display: inline; */
 white-space: nowrap;
 }
