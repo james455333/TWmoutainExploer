@@ -104,7 +104,7 @@ out.println("                            </div>");
 out.println("                        </article>");
 out.println("                        <nav class=\"inline1\">");
 out.println("                            <div class=\"menu\">");
-out.println("                                <a href=\"../fragment/topbar.jsp\">返回躍進者</a>");
+out.println("                                <a href=\"../fragment/frame.jsp\">返回躍進者</a>");
 out.println("                            </div>");
 out.println("                        </nav>");
 out.println("                        <div class=\"st02\">");
