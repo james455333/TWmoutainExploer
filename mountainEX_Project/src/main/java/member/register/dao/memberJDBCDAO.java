@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import javax.management.RuntimeErrorException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -53,7 +51,9 @@ public class memberJDBCDAO implements memberDAO{
 		}
 		
 	}
-
+	
+	
+	//檢查登入密碼
 	@Override
 	public MemberBean checkIdPassword(String userId, String password) {
 		
@@ -91,7 +91,7 @@ public class memberJDBCDAO implements memberDAO{
 	}
 	
 	
-	//檢查登入密碼
+	
 	
 
 	

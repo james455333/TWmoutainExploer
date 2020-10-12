@@ -39,38 +39,50 @@
 		<!-- 主要內容 -->
 		<div id="content">
 			<div id="barNav">
-			<form>
+				<form id="memberInfo" action="<c:url value='MemberInfoServlet'></c:url>" method="POST">
 				<table>
-					<tr>
-						<th>${MemberBean.name}的個人資料</th>
-					</tr>
-					<tr>
-						<td>
+					<caption>
+						<h2>${MemberBean.name}</h2>
+					</caption>
+					<c:forEach var="info" items="${listInfo}" />
+						<tr>
 							<label>帳號：</label>
-						</td>
-						<td>
-							${MemberBean.memberId}
-						</td>
-					</tr>
-					<tr>
-						<td>
+							<c:out value="${}" />
+						</tr>
+						<tr>
 							<label>姓名：</label>
-						</td>
-						<td>
-							${MemberBeam.name}
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label></label>
-						</td>
-					</tr>
-
-
-
-
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>地址：</label>
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>Email：</label>
+							<c:out value="${}" />							
+						</tr>
+						<tr>
+							<label>電話：</label>
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>登山經驗：</label>
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>會員身分組：</label>
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>購物車購買總額：</label>
+							<c:out value="${}" />
+						</tr>
+						<tr>
+							<label>未付款總額：</label>
+							<c:out value="${}" />
+						</tr>
 				</table>
-			</form>
+				</form>
 			</div>
 			
 
