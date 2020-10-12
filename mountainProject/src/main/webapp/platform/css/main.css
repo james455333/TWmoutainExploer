@@ -21,7 +21,8 @@ body {
 
 .listTable_tr {
     border-top: 5px solid #464646;
-    width: 1000px; 
+    /* width: 1000px; */
+    width: 100%; 
     border-radius:5px;   
 }
 .listTable_tr_1 {
@@ -42,7 +43,8 @@ body {
 }
 
 .listTable_td_time {
-    width: 300px;
+    width: 550px;
+  
     font-size: 15px;
     text-align: center;
 }
@@ -64,7 +66,7 @@ body {
 }
 
 .listTable_td_count {
-    width: 300px;
+    width: 535px;
     font-size: 15px;
     text-align: center;
 }
@@ -124,8 +126,9 @@ white-space: nowrap;
 .board{
     border-radius:5px;
     white-space: nowrap;
-    width: 80;
-    overflow: auto;
+    /* width: 80; */
+    width: 100%;
+    overflow:auto;
     /* background-color:gray; */
     border-radius:5px;
     list-style-type:none;
@@ -172,6 +175,7 @@ fieldset {
     border-radius: 15px;
 }
 .legend {
+   text-align:center;
     color: rgb(255, 255, 255);
 }
 .count{
