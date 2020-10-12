@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旅遊地點天氣查詢</title>
+<title>會員登入</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 	
@@ -35,11 +35,15 @@
 		<div id="content">
 			<div id="barNav"></div>
 			<form id="loginFrame" action="<c:url value='LoginServlet'></c:url>" method='post'>
-				<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-				<label for="inputEmail" class="sr-only">Email address</label>
-					<input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required="" autofocus="">
-				<label for="inputPassword" class="sr-only">Password</label>
-					<input type="password" id="inputPassword" name="pwd" class="form-control" placeholder="Password" required="">
+				<h1 class="h3 mb-3 font-weight-normal">會員登入</h1>
+				<label for="inputEmail" class="sr-only">帳號：</label>
+					<input type="text" id="userId" name="userId" class="form-control" placeholder="請輸入會員帳號" required="" autofocus="">
+					<span><Font color="red" size="-3">${ErrorMsgKey.LoginError}</Font></span>
+
+				<label for="inputPassword" class="sr-only">密碼：</label>
+					<input type="password" id="password" name="password" class="form-control" placeholder="請輸入密碼" required="">
+					<span><Font color="red" size="-3">${ErrorMsgKey.LoginError}</Font></span>
+
 				<div class="checkbox mb-3">
 				    <label>
 				    	<input type="checkbox" value="remember-me"> Remember me

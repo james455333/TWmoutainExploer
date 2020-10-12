@@ -38,14 +38,47 @@
 		
 		<!-- 主要內容 -->
 		<div id="content">
-			<div id="barNav"></div>
+			<div id="barNav">
+			<form>
+				<table>
+					<tr>
+						<th>${MemberBean.name}的個人資料</th>
+					</tr>
+					<tr>
+						<td>
+							<label>帳號：</label>
+						</td>
+						<td>
+							${MemberBean.memberId}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>姓名：</label>
+						</td>
+						<td>
+							${MemberBeam.name}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label></label>
+						</td>
+					</tr>
+
+
+
+
+				</table>
+			</form>
+			</div>
 			
 
 		</div>
 
-		<footer> 
+	<footer> 
 		
-		</footer>
+	</footer>
 
 	</div>
 
