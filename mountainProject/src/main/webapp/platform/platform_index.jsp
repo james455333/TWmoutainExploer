@@ -27,7 +27,7 @@ out.println("            </nav>");
 out.println("");
 out.println("        </header>");
 out.println("    </div>");
-out.println("    <main>");
+out.println("    <!-- <main> -->");
 out.println("        <div class=\"board\">");
 out.println("            <div class=\"listTable_thead\">");
 out.println("                <div class=\"listTable_tr listTable_tr_1\">");
@@ -104,14 +104,13 @@ out.println("                    </div>");
 out.println("                </div>");
 out.println("            </article>");
 out.println("            <div class=\"st02\">");
-out.println("                <button type=\"button\" value=\"發文\"><a href=\"發文表單.html\">我要發文</a></button>");
+out.println("                <button type=\"button\" value=\"發文\"><a href=\"html/發文表單.html\">我要發文</a></button>");
 out.println("            </div>");
 out.println("            <div class=\"count\">");
 out.println("                <a style=\"color: rgb(255, 255, 255);\">網站訪問次數</a><hr>");
 out.println("                <a href='https://www.hit-counts.com/'><img src='http://www.hit-counts.com/counter.php?t=MTQ1MjM3NA==' border='0' alt='logo services'></a><BR><a href='https://www.glowgraphics.co.uk/'>logo services</a></div>");
 out.println("");
 out.println("        </div>");
-out.println("    </main>");
 %>
 </body>
 </html>
