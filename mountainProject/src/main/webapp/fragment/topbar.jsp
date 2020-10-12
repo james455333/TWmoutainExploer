@@ -85,7 +85,7 @@
 		<div id="platform" class="text-info">
 			<c:choose>
 				<c:when test="${ functionCheck != 'platform' }"> 
-					<a href='<c:url value="/platform/title/platform.jsp" />'>討論區</a>
+					<a href='<c:url value="/platform/platform_index.jsp" />'>討論區</a>
 				</c:when>
 				<c:otherwise>
 					討論區
