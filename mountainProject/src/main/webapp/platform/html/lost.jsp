@@ -74,7 +74,7 @@
         </article>
         <nav class="inline1">
             <div class="menu">
-                <a href="../../fragment/topbar.jsp">返回躍進者</a>
+                <a href="../../index.jsp">返回躍進者</a>
             </div>
         </nav>
                 <div class="st02">
