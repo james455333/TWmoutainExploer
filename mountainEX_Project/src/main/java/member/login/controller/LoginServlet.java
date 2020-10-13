@@ -116,8 +116,10 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		if(errorMsgMap.isEmpty()) {
-			response.sendRedirect("loginsucc.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("memberInfo.jsp");
+//			response.sendRedirect("loginsucc.jsp");
 			System.out.println("4");
+			dispatcher.forward(request, response);
 			return;
 		}else {
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");

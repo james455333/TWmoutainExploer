@@ -57,7 +57,7 @@ public class MemberInfoServlet extends HttpServlet {
 		
 		List<MemberBean> listMbInfo = new ArrayList<MemberBean>();
 		for(MemberBean mb : showInfo) {
-			if(mb.getMemberId().contains(userId) && mb.getPassword().contains(password)) {
+			if(mb.getMemberId().equals(userId) && mb.getPassword().equals(password)) {
 				infoDAO.listMbInfo(userId, password);
 				listMbInfo.add(mb);
 			}
