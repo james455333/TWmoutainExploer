@@ -23,26 +23,37 @@
 	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
 	rel="stylesheet">
  <link rel="stylesheet" href="../../pan/cssFolder/index.css">
+
+  
+    
 <style>
+
  .moup {
             position: relative;
-            margin: 2%;
+            margin: 5% 5% 0% 5%;
             /* margin-left: %;
      margin-top: 10%; */
             /* background-color: aqua; */
             width: 20%;
             float: left;
-	clear:right;
+			clear:right;
 	
         }
         .cow{
-        margin:1%;
+        margin-top:20px;
+        margin:1%
+        
         float: left;
         clear:left;
+        margin-left:30%;
         }
         td,th{padding:10px;
         text-align:center;
         }
+        .del{float:right;
+        	 
+        	 clear:left;}
+       
 </style>
 </head>
 
@@ -58,11 +69,17 @@
 
 		
 		<!-- 主要內容 -->
+		
+		
 		<div id="content">
+		
+		
+		
+		
 		<form action="<c:url value='HouseServlet'></c:url>"method='post'>	
 		<div class="moup">
                 <div class="search">
-                <h3>觀看</h3>
+                <h3>全部查詢</h3>
                 <input type="submit" value="查詢">
 		</div></div>
 		</form>
@@ -95,13 +112,18 @@
                     </div>
 </form>
 
+<div>
+<input type="button" onclick="location.href='inserthouse.jsp'" value="新增">
+</div>
+
 <table class="cow">
 		<thead>
-		<tr><th>山</th><th>房名</th><th>床位</th><th>營地位</th><th>海拔</th></tr>
+		<tr><th>國家公園</th><th>房名</th><th>床位</th><th>營地總數</th><th>海拔</th></tr>
 		</thead>
 		<body>
 <div class="cow">	
 		<c:forEach var="i" items="${all}">
+		
 		<tr><p><td>${i.mountainName}  </td><td>  ${i.name}   </td><td>  ${i.seat}  </td><td>  ${i.campSeat}  </td><td>  ${i.hight}  </td></p></tr>
 		
 		</c:forEach>
@@ -118,10 +140,49 @@
     <div class="cow">	
     
 		<c:forEach var="j" items="${name}">
-		<tr><p><td>${j.mountainName}  </td><td>  ${j.name}   </td><td>  ${j.seat}  </td><td>  ${j.campSeat}  </td><td>  ${j.hight}  </td></p></tr>
-		</c:forEach>
+		<tr><p><td>${j.mountainName}  </td><td>  ${j.name}   </td><td>  ${j.seat}  </td><td>  ${j.campSeat}  </td><td>  ${j.hight}  </td>
 		
+		<div>
+		<td>
+		<form action="<c:url value='DeleteHouseServlet'></c:url>"method='post'>
+			<input class="del" type="hidden" name="delete" value="${j.name}">
+			<input type="button" id="delete_data" value="刪除" > 
+		</form></td> 
+		
+		<td>
+		<button id="preview">修改</button>
+		</td>
+		</div>
+		</p></tr>
+	
+ 
+
+
+		<div>
+		<form  action="<c:url value='UpdateHouseServlet'></c:url>"method='post' >	
+			<fieldset class="cow"   var="j" items="${name}">
+		<legend><caption id="hideForm" style="display:none;"><h2>修改山屋</h2></legend>
+		<div><label>國家公園</label>
+		<input type="text" name="mou1" size="10" value="${j.mountainName}">
+	</div><div><label>房名</label>
+		<input type="text" name="nam1" size="10" value="${j.name}">
+	</div><div>	<label>床位</label>
+		<input type="text" name="sea1" size="10" value="${j.seat}">
+	</div><div>	<label>營地總數</label>
+		<input type="text" name="cam1" size="10" value="${j.campSeat}">
+	</div><div>	<label>海拔</label>
+		<input type="text" name="hig1" size="10" value="${j.hight}">
+	</div>
+	
+	<div><input type="submit" value="修改"><input type="button" value="取消" id="cancel_update"></div>
+		</fieldset>	
+			</form>
+		</div>
+		</div>
+		
+		</c:forEach>
     </div>
+		
     </body>
 		</table>
         
@@ -148,6 +209,52 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	
+	<script>
+		$("#preview").on("click",function(){
+			console.log($("#hideForm"))
+			$("#hideForm").css("display" , "block")
+		})
+		$("#cancel_update").on("click",function(){
+			$("#hideForm").css("display" , "none")
+		})
+		$("#content").append("<div id='cancel_box'></div>");
+			$("#cancel_box").css({
+				"display" : "none",
+				"position" : "absolute",
+				"width" : "20%",
+				"height" : "15%",
+				"background-color":" rgb(121, 226, 177)",
+				"border" : "3px solid yellowgreen",
+				"left" : "40%",
+				"top" : "22.5%",
+				"opacity" : "0.825",
+			}).append("<div id='confirmString'>確認是否刪除</div>")
+			$("#confirmString").css({
+				"position" : "relative",
+				"width" : "60%",
+				"left" : "20%",
+				"text-align" : "center",
+			})
+			$("#cancel_box").append("<div id='confirm_box'><div><input type='submit' value='是'></div><div><input type='button' value='否' id='no_button'></div></div>")
+			$("#confirm_box").css({
+				"position" : "relative",
+				"width" : "60%",
+				"left" : "20%",
+				"text-align" : "center",
+				"top" : "25%",
+				"display" : "flex",
+				"align-items" : "center",
+				"justify-content" : "center"
+			}).find("div").css("width","100px")
+		$("#delete_data").on("click",function(){
+			$("#cancel_box").css("display","block")
+		})
+		
+			$("#no_button").on("click",function(){
+				$("#cancel_box").css("display","none")
+			})
+	
+	</script>
 		
 		
 </body>

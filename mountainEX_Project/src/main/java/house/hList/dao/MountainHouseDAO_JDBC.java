@@ -22,7 +22,6 @@ public class MountainHouseDAO_JDBC {
 		dataS.setUsername("HI");
 		dataS.setUserPassword("HI");
 		DataSource datasoure = dataS.getDatasoure();
-		System.out.println("1");
 		try (
 				Connection connection = datasoure.getConnection();
 				){
@@ -53,7 +52,6 @@ public class MountainHouseDAO_JDBC {
 		dataS.setUsername("HI");
 		dataS.setUserPassword("HI");
 		DataSource datasoure = dataS.getDatasoure();
-		System.out.println("3");
 	
 		try (
 				Connection connection = datasoure.getConnection();
@@ -87,7 +85,6 @@ public class MountainHouseDAO_JDBC {
 		dataS.setUsername("HI");
 		dataS.setUserPassword("HI");
 		DataSource datasoure = dataS.getDatasoure();
-		System.out.println("name");
 		
 		try (
 				Connection connection = datasoure.getConnection();
@@ -114,10 +111,77 @@ public class MountainHouseDAO_JDBC {
 			e.printStackTrace();
 		}
 		
-		
-		
-		
 		return hBList;
 	}
+	
+	
+	public void insertHouse(String mou ,String nam,Integer sea , Integer cam,String hig){
+		
+		dataS.setUsername("HI");
+		dataS.setUserPassword("HI");
+		DataSource datasoure = dataS.getDatasoure();
+		
+		try (Connection connection = datasoure.getConnection();){
+				PreparedStatement stmt = connection.prepareStatement(
+						"insert into mountainhouse( mountainname,name,seat,campseat,hight)values(?, ?, ?, ?, ?)");
+				stmt.setString(1,mou);
+				stmt.setString(2,nam);
+				stmt.setInt(3,sea);
+				stmt.setInt(4,cam);
+				stmt.setString(5,hig);
+				
+				ResultSet rs=stmt.executeQuery();		
+				stmt.close();
+				
+				
+	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+
+	}
+	
+	public void deleteHouse(String del) {
+		dataS.setUsername("HI");
+		dataS.setUserPassword("HI");
+		DataSource datasoure = dataS.getDatasoure();
+		try (Connection connection = datasoure.getConnection();){
+			PreparedStatement stmt = connection.prepareStatement("delete from mountainhouse where name=?");
+		stmt.setString(1, del);
+		stmt.executeUpdate();
+		
+		
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+}
+	
+	public void updateHouse(String mou1 ,String nam1,Integer sea1 , Integer cam1,String hig1) {
+		dataS.setUsername("HI");
+		dataS.setUserPassword("HI");
+		DataSource datasoure = dataS.getDatasoure();
+		System.out.println("333");
+		try (Connection connection = datasoure.getConnection();){
+			PreparedStatement stmt = connection.prepareStatement("update mountainhouse set mountainname=? ,seat=? ,campseat=? ,hight=? where name=?");
+			stmt.setString(1,mou1 );
+			stmt.setInt(2,sea1);
+			stmt.setInt(3,cam1);			
+			stmt.setString(4, hig1);
+			stmt.setString(5, nam1);
+			stmt.executeUpdate();
+			
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	
+}
+	
+	
 	
 }

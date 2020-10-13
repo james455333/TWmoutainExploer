@@ -26,11 +26,11 @@
 <style>
  .moup {
             position: relative;
-            margin: 2%;
+           margin: 3% 3% 0% 5%;
             /* margin-left: %;
      margin-top: 10%; */
             /* background-color: aqua; */
-            width: 20%;
+            width: 15%;
             float: left;
 	clear:right;
 	
@@ -39,6 +39,7 @@
         margin:1%;
         float: left;
         clear:left;
+        margin-left:30%;
         }
         td,th{padding:10px;
         text-align:center;
@@ -62,7 +63,7 @@
 		<form action="<c:url value='CampServlet'></c:url>"method='post'>	
 		<div class="moup">
                 <div class="search">
-                <h3>觀看營地</h3>
+                <h3>全部搜尋</h3>
                 <input type="submit" value="查詢">
 		</div></div>
 		</form>
@@ -93,7 +94,7 @@
 <form action="<c:url value='SelectCampNameServlet'></c:url>"method='post'>	
 			<div class="moup">
                 <div class="search">
-                <label>營地</label>
+                <label>營地名稱</label>
      
                  <input type="text" name="sn" class="form-control" tabindex="28" >   
                         
@@ -103,14 +104,20 @@
                     </div>
 </form>
 
+
+<div>
+<input type="button" onclick="location.href='insertcamp.jsp'" value="新增">
+</div>
+
+
 <table class="cow">
 		<thead>
-		<tr><th>縣市</th><th>鄉鎮</th><th>名稱</th><th>mail</th></tr>
+		<tr><th>縣市</th><th>鄉鎮</th><th>營地名稱</th><th>網址</th></tr>
 		</thead>
 		<body>
 <div class="cow">	
 		<c:forEach var="i" items="${camp_all}">
-		<tr><p><td>${i.city}  </td><td>  ${i.camptown}   </td><td>  ${i.campname}  </td><td>  ${i.campdesc}  </td></p></tr>
+		<tr><p><td>${i.city}  </td><td>  ${i.camptown}   </td><td>  ${i.campname}  </td><td> <a href="${i.campdesc}">${i.campdesc}</a></td></p></tr>
 		
 		</c:forEach>
 		
@@ -118,7 +125,7 @@
         
 <div class="cow">	
 	<c:forEach var="k" items="${camp_city}" >
-		<tr><p><td>${k.city}  </td><td>  ${k.camptown}   </td><td>  ${k.campname}  </td><td>  ${k.campdesc}  </td></p></tr>
+		<tr><p><td>${k.city}  </td><td>  ${k.camptown}   </td><td>  ${k.campname}  </td><td><a href="${k.campdesc}">  ${k.campdesc} </a> </td></p></tr>
 		</c:forEach>
 		
     </div>
@@ -126,14 +133,47 @@
     <div class="cow">	
     
 		<c:forEach var="j" items="${camp_town}">
-		<tr><p><td>${j.city}  </td><td>  ${j.camptown}   </td><td>  ${j.campname}  </td><td>  ${j.campdesc}  </td></p></tr>
+		<tr><p><td>${j.city}  </td><td>  ${j.camptown}   </td><td>  ${j.campname}  </td><td><a href="${j.campdesc}">  ${j.campdesc} </a> </td></p></tr>
 		</c:forEach>
 		
     </div>
     <div class="cow">	
     
 		<c:forEach var="l" items="${camp_name}">
-		<tr><p><td>${l.city}  </td><td>  ${l.camptown}   </td><td>  ${l.campname}  </td><td>  ${l.campdesc}  </td></p></tr>
+		<tr><p><td>${l.city}  </td><td>  ${l.camptown}   </td><td>  ${l.campname}  </td><td><a href="${l.campdesc}">  ${l.campdesc} </a> </td>
+		
+		<td>
+		<form action="<c:url value='DeleteCampServlet'></c:url>"method='post'>
+			<input class="del" type="hidden" name="delete" value="${l.campname}">
+			<input type="button" id="delete_data" value="刪除" > 
+		</form></td> 
+		
+		<td>
+		<button id="preview">修改</button>
+		</td>
+		</p></tr>
+		
+		<div>
+				<form  action="<c:url value='UpdateCampServlet'></c:url>"method='post'>	
+			<fieldset class="cow"  var="l" items="${camp_name}">
+		<legend><caption id="hideForm" style="display:none;"><h2>修改營地</h2></legend>
+		<div><label>縣市</label>
+		<input type="text" name="cit1" size="10" value="${l.city}">
+	</div><div><label>鄉鎮</label>
+		<input type="text" name="cmpt1" size="10" value="${l.camptown}">
+	</div><div>	<label>營地名稱</label>
+		<input type="text" name="cmpn1" size="20" value="${l.campname}">
+	</div><div>	<label>網址</label>
+		<input type="text" name="cmpd1" size="50" value="${l.campdesc}">
+	</div>
+	
+	<div><input type="submit" value="修改"><input type="button" value="取消" id="cancel_update"></div>
+		</fieldset>	
+			</form>
+		
+		</div>
+		
+		
 		</c:forEach>
 		
     </div>
@@ -163,6 +203,53 @@
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	
+	
+	<script>
+		$("#preview").on("click",function(){
+			console.log($("#hideForm"))
+			$("#hideForm").css("display" , "block")
+		})
+		$("#cancel_update").on("click",function(){
+			$("#hideForm").css("display" , "none")
+		})
+		$("#content").append("<div id='cancel_box'></div>");
+			$("#cancel_box").css({
+				"display" : "none",
+				"position" : "absolute",
+				"width" : "20%",
+				"height" : "15%",
+				"background-color":" rgb(121, 226, 177)",
+				"border" : "3px solid yellowgreen",
+				"left" : "40%",
+				"top" : "22.5%",
+				"opacity" : "0.825",
+			}).append("<div id='confirmString'>確認是否刪除</div>")
+			$("#confirmString").css({
+				"position" : "relative",
+				"width" : "60%",
+				"left" : "20%",
+				"text-align" : "center",
+			})
+			$("#cancel_box").append("<div id='confirm_box'><div><input type='submit' value='是'></div><div><input type='button' value='否' id='no_button'></div></div>")
+			$("#confirm_box").css({
+				"position" : "relative",
+				"width" : "60%",
+				"left" : "20%",
+				"text-align" : "center",
+				"top" : "25%",
+				"display" : "flex",
+				"align-items" : "center",
+				"justify-content" : "center"
+			}).find("div").css("width","100px")
+		$("#delete_data").on("click",function(){
+			$("#cancel_box").css("display","block")
+		})
+		
+			$("#no_button").on("click",function(){
+				$("#cancel_box").css("display","none")
+			})
+	
+	</script>
 		
 		
 </body>
