@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- 	將使用者名稱取出 -->
-	<c:set var="memberId" value="${LoginOK.userId}" />
+	<c:set var="memberId" value="${MemberBean.memberId}" />
 	
 <!-- 	移除放在session物件內的物件屬性 -->
 	<c:remove var="LoginOK" scope="session" />
