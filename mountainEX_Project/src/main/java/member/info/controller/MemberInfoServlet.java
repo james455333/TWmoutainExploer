@@ -69,5 +69,9 @@ public class MemberInfoServlet extends HttpServlet {
 		return;
 		
 	}
+	
+	protected void updateMbData() {
+		
+	}
 
 }
