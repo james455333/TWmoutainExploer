@@ -37,15 +37,14 @@ public class memberInfoJDBCDAO implements memberInfoDAO{
 
 	//登入後展示會員資料
 	@Override
-	public List<MemberBean> listMbInfo(String memberId, String password) {
+	public List<MemberBean> listMbInfo() {
 		
 		List<MemberBean> list = new ArrayList<MemberBean>();
 		try (Connection connection = ds.getConnection();
-			 PreparedStatement pstmt = connection.prepareStatement("select * from member where memberId = ? and password = ?");
+			 PreparedStatement pstmt = connection.prepareStatement("select * from member");
+			 ResultSet rs = pstmt.executeQuery();
 		){
-			pstmt.setString(1, memberId);
-			pstmt.setString(2, password);
-			ResultSet rs = pstmt.executeQuery();
+			
 		
 			while (rs.next()) {
 				MemberBean mb = new MemberBean();
@@ -56,8 +55,8 @@ public class memberInfoJDBCDAO implements memberInfoDAO{
 				mb.setEmail(rs.getString("email"));
 				mb.setTel(rs.getString("tel"));
 				mb.setGroupId(rs.getInt("groupId"));
-				mb.setTotalAmt(rs.getDouble("totalamt"));
-				mb.setUnpaid_amount(rs.getDouble("unpaid_amount"));
+//				mb.setTotalAmt(rs.getDouble("totalamt"));
+//				mb.setUnpaid_amount(rs.getDouble("unpaid_amount"));
 				
 				list.add(mb);
 

@@ -40,10 +40,12 @@
 		<!-- 主要內容 -->
 		<div id="content">
 			
-			<form id="Info" action="./MemberInfoServlet" method="POST">
+			<form id="Info" action="<c:url value='/MemberInfoServlet' />" method="POST" >
+			
 				<fieldset>
-
-					<h2>${MemberBean.name}的個人資料</h2>
+					
+					
+						<h2>${MemberBean.name}的個人資料</h2>
 					
 						<label>帳號：</label>
 						<span><c:out value="${MemberBean.memberId}" /></span>
@@ -87,13 +89,14 @@
 <!-- 						<label>未付款總額：</label> -->
 <%-- 						<span><c:out value="${info.Unpaid_amount}" /></span> --%>
 <!-- 						<br/> -->
+					
 				</fieldset>
 
-			</form>
 			<div>
-				<input type="submit" id="submit1" name="submit1" value="修改資料">
-				<input type="submit" id="submit2" name="submit2" value="會員登出">
+				<input type="submit" id="update" name="update" value="修改資料">
+<!-- 				<input type="submit" id="logout" name="logout" value="會員登出"> -->
 			</div>
+			</form>
 		</div>
 			
 

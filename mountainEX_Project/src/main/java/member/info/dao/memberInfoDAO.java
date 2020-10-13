@@ -6,7 +6,7 @@ import member.login.model.MemberBean;
 
 public interface memberInfoDAO {
 	
-	public List<MemberBean> listMbInfo(String memberId, String password);
+	public List<MemberBean> listMbInfo();
 	
 	public void updateData(MemberBean listUpdate);
 
