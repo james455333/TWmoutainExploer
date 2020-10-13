@@ -8,7 +8,7 @@
 <link href="css/main.css" rel="stylesheet" />
 </head>
 <body>
- <div>
+<div>
         <header>
             <div style="img">
                 <img class="img1" src="images/img1-2.jpg">
@@ -16,10 +16,10 @@
             <nav class="inline">
                 <ul class="menu">
                     <li><a style="color:#f9fd04">綜合討論</a></li>
-                    <li><a href="html/knowledge.jsp">知識</a></li>
-                    <li><a href="html/group.jsp">揪團</a></li>
-                    <li><a href="html/question.jsp">雜症求助</a></li>
-                    <li><a href="html/lost.jsp">失物招領</a></li>
+                    <li><a href="html/[知識].html">知識</a></li>
+                    <li><a href="html/[揪團].html">揪團</a></li>
+                    <li><a href="html/[雜症求助].html">雜症求助</a></li>
+                    <li><a href="html/[失物招領] .html">失物招領</a></li>
                 </ul>
             </nav>
             
@@ -107,7 +107,7 @@
                             </div>
                         </nav>
                         <div class="st02">
-                            <button type="button" value="發文"><a href="html/po.jsp">我要發文</a></button>
+                            <button type="button" value="發文"><a href="html/發文表單.html">我要發文</a></button>
                         </div>
                         <div class="count">
                             <a style="color: rgb(255, 255, 255);">網站訪問次數</a>
@@ -117,5 +117,6 @@
                                 </div>
                                 
                             </div>
+                            <!-- </main> -->
 </body>
 </html>

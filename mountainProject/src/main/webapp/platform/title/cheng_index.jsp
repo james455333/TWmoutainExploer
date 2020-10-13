@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="css/main.css" rel="stylesheet" />
+<link href="../css/main.css" rel="stylesheet" />
 </head>
 <body>
 <%
@@ -18,10 +18,10 @@ out.println("");
 out.println("            <nav id=\"inline\">");
 out.println("                <ul class=\"menu\">");
 out.println("                    <li><a style=\"color:#f9fd04\">綜合討論</a></li>");
-out.println("                    <li><a href=\"html/[知識].html\">知識</a></li>");
-out.println("                    <li><a href=\"html/[揪團].html\">揪團</a></li>");
-out.println("                    <li><a href=\"html/[雜症求助].html\">雜症求助</a></li>");
-out.println("                    <li><a href=\"html/[失物招領] .html\">失物招領</a></li>");
+out.println("                    <li><a href=\"html/知識.jsp\">知識</a></li>");
+out.println("                    <li><a href=\"html/[揪團].jsp\">揪團</a></li>");
+out.println("                    <li><a href=\"html/[雜症求助].jsp\">雜症求助</a></li>");
+out.println("                    <li><a href=\"html/[失物招領] .jsp\">失物招領</a></li>");
 out.println("                </ul>");
 out.println("            </nav>");
 out.println("");
@@ -104,7 +104,7 @@ out.println("                    </div>");
 out.println("                </div>");
 out.println("            </article>");
 out.println("            <div class=\"st02\">");
-out.println("                <button type=\"button\" value=\"發文\"><a href=\"發文表單.html\">我要發文</a></button>");
+out.println("                <button type=\"button\" value=\"發文\"><a href=\"發文表單.jsp\">我要發文</a></button>");
 out.println("            </div>");
 out.println("            <div class=\"count\">");
 out.println("                <a style=\"color: rgb(255, 255, 255);\">網站訪問次數</a><hr>");

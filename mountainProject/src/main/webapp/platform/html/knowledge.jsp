@@ -1,14 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zh-tw">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/main.css" rel="stylesheet" />
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../css/main.css" rel="stylesheet" />
 </head>
-
-<body class="l_container">
+<body>
     <div>
         <header>
             <div style="img">
@@ -17,11 +16,11 @@
 
             <nav id="inline">
                 <ul class="menu">
-                    <li><a href="../cheng_index new.html">綜合討論</a></li>
+                    <li><a href="../platform_index.jsp">綜合討論</a></li>
                     <li><a style="color:#f9fd04">知識</a></li>
-                    <li><a href="[揪團].html">揪團</a></li>
-                    <li><a href="[雜症求助].html">雜症求助</a></li>
-                    <li><a href="[失物招領] .html">失物招領</a></li>
+                    <li><a href="group.jsp">揪團</a></li>
+                    <li><a href="question.jsp">雜症求助</a></li>
+                    <li><a href="lost.jsp">失物招領</a></li>
                 </ul>
             </nav>
 
@@ -78,12 +77,11 @@
                 </div>
             </nav>
             <div class="st02">
-                <button type="button" value="發文"><a href="發文表單.html">我要發文</a></button>
+                <button type="button" value="發文"><a href="po.jsp">我要發文</a></button>
                 
             </div>
 
         </div>
     </main>
 </body>
-
 </html>
