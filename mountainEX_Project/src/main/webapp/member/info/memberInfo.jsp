@@ -28,7 +28,7 @@
 
 <body>
 
-<c:set var='functionCheck'  value="memberInfo" scope="session"/>
+<c:set var='functionCheck' value="memberInfo" scope="session"/>
 
 	<div id="container">
 	
@@ -38,56 +38,58 @@
 		
 		<!-- 主要內容 -->
 		<div id="content">
-			<div id="barNav">
-				<form id="memberInfo" action="./MemberInfoServlet" method="POST">
-					<fieldset>
+			
+			<form id="Info" action="./MemberInfoServlet" method="POST">
+				<fieldset>
 
-						<h2>${MemberBean.name}</h2>
-						
-						
-						<c:forEach var="info" items="${listMbInfo}" />
-	
-							<label>帳號：</label>
-							<span><c:out value="${info.memberId}" /></span>
-							<br/>
-	
-							<label>姓名：</label>
-							<span><c:out value="${info.name}" /></span>
-							<br/>
-	
-							<label>地址：</label>
-							<span><c:out value="${info.address}" /></span>
-							<br/>
-	
-							<label>Email：</label>
-							<span><c:out value="${info.email}" /></span>							
-							<br>
-	
-							<label>電話：</label>
-							<span><c:out value="${info.tel}" /></span>
-							<br/>
-	
-							<label>登山經驗：</label>
-							<span><c:out value="${info.exp}" /></span>
-							<br/>
-	
-							<label>會員身分組：</label>
-							<span><c:out value="${info.groupId}" /></span>
-							<br/>
-	
-							<label>購物車購買總額：</label>
-							<span><c:out value="${info.totalAmount}" /></span>
-							<br/>
+					<h2>${listMbInfo.name}的個人資料</h2>
+					
+					
+					<c:forEach var="info" items="${listMbInfo}" />
+					
+					
+						<label>帳號：</label>
+						<span><c:out value="${info.memberId}" /></span>
+						<br/>
+		
+						<label>姓名：</label>
+						<span><c:out value="${info.name}" /></span>
+						<br/>
+		
+						<label>地址：</label>
+						<span><c:out value="${info.address}" /></span>
+						<br/>
+		
+						<label>Email：</label>
+						<span><c:out value="${info.email}" /></span>							
+						<br>
+		
+						<label>電話：</label>
+						<span><c:out value="${info.tel}" /></span>
+						<br/>
+		
+						<label>登山經驗：</label>
+						<span><c:out value="${info.exp}" /></span>
+						<br/>
+		
+						<label>會員身分組：</label>
+						<span><c:out value="${info.groupId}" /></span>
+						<br/>
+		
+						<label>購物車購買總額：</label>
+						<span><c:out value="${info.totalAmount}" /></span>
+						<br/>
 							
-							<label>未付款總額：</label>
-							<span><c:out value="${info.Unpaid_amount}" /></span>
-							<br/>
-					</fieldset>
-				</form>
-			</div>
+						<label>未付款總額：</label>
+						<span><c:out value="${info.Unpaid_amount}" /></span>
+						<br/>
+						
+				</fieldset>
+			</form>
+		</div>
 			
 
-		</div>
+		
 
 	<footer> 
 		
