@@ -4,30 +4,35 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 import member.login.model.MemberBean;
 
 
 public class memberInfoJDBCDAO implements memberInfoDAO{
 	
 	private Connection connection;
-	private static DataSource ds = null;
+	private static DataSource ds;
 	
-	static {
-		try {
-			Context ctx = new InitialContext();
-			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/xe");
-			
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
+	public DataSource getDataSource() {
+		if(ds == null) {
+				try {
+					Context ctx = new InitialContext();
+					ds = (DataSource) ctx.lookup("java:comp/env/jdbc/xe");
+					
+				} catch (NamingException e) {
+					e.printStackTrace();
+				}
+			}
+		return null;
 	}
+	
+	
 
 	//登入後展示會員資料
 	@Override

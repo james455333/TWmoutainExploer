@@ -23,6 +23,7 @@
 	rel="stylesheet">
  <link rel="stylesheet" href="../../pan/cssFolder/index.css">
 <style>
+	
 </style>
 </head>
 
@@ -83,8 +84,14 @@
 						<label>未付款總額：</label>
 						<span><c:out value="${info.Unpaid_amount}" /></span>
 						<br/>
-						
 				</fieldset>
+
+				<div>
+					<input type="submit" id="submit1" name="submit1" value="修改資料">
+					<input type="submit" id="submit2" name="submit2" value="會員登出">
+				</div>
+
+
 			</form>
 		</div>
 			

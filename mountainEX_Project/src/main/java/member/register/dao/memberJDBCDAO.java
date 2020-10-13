@@ -14,16 +14,19 @@ import member.login.model.MemberBean;
 public class memberJDBCDAO implements memberDAO{
 	
 	private Connection connection;
-	private static DataSource ds = null;
+	private static DataSource ds;
 	
-	static {
-		try {
-			Context ctx = new InitialContext();
-			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/xe");
-			
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
+	public DataSource getDataSource() {
+		if(ds == null) {
+				try {
+					Context ctx = new InitialContext();
+					ds = (DataSource) ctx.lookup("java:comp/env/jdbc/xe");
+					
+				} catch (NamingException e) {
+					e.printStackTrace();
+				}
+			}
+		return null;
 	}
 
 	@Override
