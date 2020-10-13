@@ -51,6 +51,7 @@ public class MemberInfoUpdateServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession(false);
 		String memberId = request.getParameter("userId");
+		String groupId = request.getParameter("groupId");
 		
 //		MemberBean mb = new MemberBean();
 		
@@ -89,10 +90,14 @@ public class MemberInfoUpdateServlet extends HttpServlet {
 			mb.setExp(mb_exp);
 			System.out.println("H");
 			
+			mb.setGroupId(Integer.parseInt(groupId));
+			System.out.println(groupId);
+			
 			 listMbInfo.add(mb);
 			 infoDAO.updateData(mb);
 			 System.out.println("I");
 			 
+			 //重新設定session中的MemberBean
 			 session.setAttribute("MemberBean", mb);
 			 
 			 response.sendRedirect(request.getContextPath() + "/member/info/memberInfo.jsp");

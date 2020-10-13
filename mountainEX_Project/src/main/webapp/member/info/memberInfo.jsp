@@ -94,7 +94,7 @@
 
 			<div>
 				<input type="submit" id="update" name="update" value="修改資料">
-<!-- 				<input type="submit" id="logout" name="logout" value="會員登出"> -->
+				<input type="button" id="logout" name="logout" value="會員登出">
 			</div>
 			</form>
 		</div>

@@ -60,17 +60,13 @@
 						<label>登山經驗：</label>
 						<input type="text" id="exp" name="exp" value="${MemberBean.exp}" />
 						<br/>
+						
+						<div style="display:none">
+							<label>會員身分組：</label>
+							<input type="text" id="groupId" name="groupId" readonly="readonly" value="${MemberBean.groupId}" />			
+							<br/>
+						</div>
 		
-						<label>會員身分組：</label>
-						<span>
-							<c:if test="${MemberBean.groupId eq 100}">
-								一般會員
-							</c:if>
-							<c:if test="${MemberBean.groupId eq 200}">
-								登山嚮導
-							</c:if>
-						</span>
-						<br/>
 		
 <!-- 						<label>購物車購買總額：</label> -->
 <%-- 						<span><c:out value="${MemberBean.totalAmount}" /></span> --%>
