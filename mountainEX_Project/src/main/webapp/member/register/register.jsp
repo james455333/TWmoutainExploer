@@ -5,7 +5,15 @@
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>User Register</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" href="../../pan/cssFolder/index.css">
+<link rel="stylesheet" href="../login/cssfolder/login.css">
 <style>
 
 </style>
@@ -78,8 +86,18 @@
 	    </form>
 	</div>
 	
-	<script src="register.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		crossorigin="anonymous"></script>
+	 <script src="../../pan/jsFolder/index.js"></script> 
+	<script id="contentCov"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
     
 </body>
 </html>
