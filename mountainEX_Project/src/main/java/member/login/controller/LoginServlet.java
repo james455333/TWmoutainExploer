@@ -116,6 +116,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 		if(errorMsgMap.isEmpty()) {
+			session.setAttribute("MemberBean",mb);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("memberInfo.jsp");
 //			response.sendRedirect("loginsucc.jsp");
 			System.out.println("4");

@@ -42,47 +42,51 @@
 			<form id="Info" action="./MemberInfoServlet" method="POST">
 				<fieldset>
 
-					<h2>${listMbInfo.name}的個人資料</h2>
-					
-					
-					<c:forEach var="info" items="${listMbInfo}" />
-					
+					<h2>${MemberBean.name}的個人資料</h2>
 					
 						<label>帳號：</label>
-						<span><c:out value="${info.memberId}" /></span>
+						<span><c:out value="${MemberBeam.memberId}" /></span>
 						<br/>
 		
 						<label>姓名：</label>
-						<span><c:out value="${info.name}" /></span>
+						<span><c:out value="${MemberBean.name}" /></span>
 						<br/>
 		
 						<label>地址：</label>
-						<span><c:out value="${info.address}" /></span>
+						<span><c:out value="${MemberBean.address}" /></span>
 						<br/>
 		
 						<label>Email：</label>
-						<span><c:out value="${info.email}" /></span>							
+						<span><c:out value="${MemberBean.email}" /></span>							
 						<br>
 		
 						<label>電話：</label>
-						<span><c:out value="${info.tel}" /></span>
+						<span><c:out value="${MemberBean.tel}" /></span>
 						<br/>
 		
 						<label>登山經驗：</label>
-						<span><c:out value="${info.exp}" /></span>
+						<span><c:out value="${MemberBean.exp}" /></span>
 						<br/>
 		
 						<label>會員身分組：</label>
-						<span><c:out value="${info.groupId}" /></span>
+						<span>
+<%-- 							<c:out value="${MemberBean.groupId}" /> --%>
+							<c:if test="${MemberBean.groupId eq 100}">
+								一般會員
+							</c:if>
+							<c:if test="${MemberBean.groupId eq 200}">
+								登山嚮導
+							</c:if>
+						</span>
 						<br/>
 		
-						<label>購物車購買總額：</label>
-						<span><c:out value="${info.totalAmount}" /></span>
-						<br/>
+<!-- 						<label>購物車購買總額：</label> -->
+<%-- 						<span><c:out value="${MemberBean.totalAmount}" /></span> --%>
+<!-- 						<br/> -->
 							
-						<label>未付款總額：</label>
-						<span><c:out value="${info.Unpaid_amount}" /></span>
-						<br/>
+<!-- 						<label>未付款總額：</label> -->
+<%-- 						<span><c:out value="${MemberBean.Unpaid_amount}" /></span> --%>
+<!-- 						<br/> -->
 						
 				</fieldset>
 			</form>
