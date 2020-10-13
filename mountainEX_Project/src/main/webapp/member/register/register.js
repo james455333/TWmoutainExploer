@@ -1,4 +1,4 @@
-// 帳號型態確認
+// 帳號型態確認*
 function checkMbID(){
     let theMbIdObj = document.getElementById("memberId");
     let theMbIdObjVal = theMbIdObj.value;

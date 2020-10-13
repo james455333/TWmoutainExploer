@@ -15,7 +15,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>旅遊地點天氣查詢</title>
+<title>User Info</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link
@@ -44,10 +44,10 @@
 					<caption>
 						<h2>${MemberBean.name}</h2>
 					</caption>
-					<c:forEach var="info" items="${listInfo}" />
+					<c:forEach var="info" items="${}" />
 						<tr>
 							<label>帳號：</label>
-							<c:out value="${}" />
+							<c:out value="${.memberId}" />
 						</tr>
 						<tr>
 							<label>姓名：</label>
